@@ -1,0 +1,30 @@
+name: Feature request
+description: Proposer une amélioration de l’expérience Sqlitos
+title: "[Idea]: "
+labels:
+  - enhancement
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Les meilleures propositions partent d’un problème réel avant de proposer une solution.
+  - type: textarea
+    id: problem
+    attributes:
+      label: Quel problème voulez-vous résoudre ?
+      placeholder: Décrivez le contexte et la difficulté rencontrée.
+    validations:
+      required: true
+  - type: textarea
+    id: outcome
+    attributes:
+      label: Quel résultat attendez-vous ?
+      placeholder: Expliquez ce qui rendrait votre travail plus simple ou plus fiable.
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposition facultative
+      placeholder: Une idée d’interface, de parcours ou d’alternative.
+
