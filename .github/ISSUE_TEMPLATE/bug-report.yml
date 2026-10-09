@@ -1,0 +1,48 @@
+name: Bug report
+description: Signaler un comportement inattendu de Sqlitos
+title: "[Bug]: "
+labels:
+  - bug
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Merci de ne jamais inclure de base de données réelle, mot de passe, jeton ou clé API.
+  - type: input
+    id: version
+    attributes:
+      label: Version de Sqlitos
+      placeholder: ex. 1.0.0
+    validations:
+      required: true
+  - type: dropdown
+    id: platform
+    attributes:
+      label: Système d’exploitation
+      options:
+        - Windows
+        - macOS
+        - Linux
+        - Other
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Étapes pour reproduire
+      placeholder: Décrivez les étapes les plus courtes possibles.
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Résultat attendu
+    validations:
+      required: true
+  - type: textarea
+    id: actual
+    attributes:
+      label: Résultat observé
+    validations:
+      required: true
+
