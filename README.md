@@ -1,117 +1,160 @@
+<div align="center">
+
 # Sqlitos
 
-<p align="center">
-  <strong>Le studio de données local, pensé pour les équipes qui veulent garder le contrôle.</strong><br />
-  Explorez, concevez, interrogez et sécurisez vos bases SQLite depuis une application desktop moderne.
-</p>
+### Your database. Your machine. Your momentum.
 
-<p align="center">
-  <a href="../../releases"><img src="https://img.shields.io/badge/plateforme-Windows%20%C2%B7%20macOS%20%C2%B7%20Linux-0d1117?style=for-the-badge" alt="Plateformes prises en charge" /></a>
-  <a href="#confidentialit%C3%A9-par-d%C3%A9faut"><img src="https://img.shields.io/badge/approche-local--first-2dd4bf?style=for-the-badge" alt="Local first" /></a>
-  <a href="#s%C3%A9curit%C3%A9"><img src="https://img.shields.io/badge/s%C3%A9curit%C3%A9-responsible%20disclosure-7c3aed?style=for-the-badge" alt="Responsible disclosure" /></a>
-</p>
+**A modern, desktop-first workspace for exploring, designing and operating SQLite databases — without giving up control of your data.**
 
-<p align="center">
-  <a href="#pourquoi-sqlitos">Pourquoi Sqlitos</a> ·
-  <a href="#fonctionnalit%C3%A9s">Fonctionnalités</a> ·
-  <a href="#installation">Installation</a> ·
-  <a href="#confidentialit%C3%A9-par-d%C3%A9faut">Confidentialité</a> ·
-  <a href="#s%C3%A9curit%C3%A9">Sécurité</a>
-</p>
+[![Official site](https://img.shields.io/badge/Official%20site-sqlitos.vercel.app-0D1117?style=for-the-badge&logo=vercel&logoColor=white)](https://sqlitos.vercel.app)
+[![Desktop first](https://img.shields.io/badge/Architecture-Desktop--first-2DD4BF?style=for-the-badge)](#desktop-first-by-design)
+[![Privacy](https://img.shields.io/badge/Data%20model-Local--first-7C3AED?style=for-the-badge)](#your-data-stays-yours)
 
----
+[Official website](https://sqlitos.vercel.app) · [Releases](../../releases) · [Security](SECURITY.md) · [Feedback](../../issues)
 
-## Pourquoi Sqlitos
+</div>
 
-Les outils de données ne devraient pas obliger une équipe à déplacer ses fichiers, exposer ses identifiants ou sacrifier la qualité de l’expérience utilisateur. **Sqlitos est un studio desktop local-first** pour travailler directement avec des bases SQLite : une interface claire pour comprendre un schéma, exécuter des requêtes et effectuer des opérations sensibles avec intention.
+<br />
 
-Il convient aussi bien à l’exploration quotidienne d’un fichier `database.sqlite` qu’aux revues de schéma, migrations, diagnostics de performance et sauvegardes.
+> **Sqlitos turns a database file into a workspace.** Inspect the structure, write SQL with confidence, evolve schemas deliberately and keep operations close to the data they affect.
 
-## Fonctionnalités
+## Table of contents
 
-| Domaine | Ce que permet Sqlitos |
+- [The database workspace, rethought](#the-database-workspace-rethought)
+- [Built for the work around data](#built-for-the-work-around-data)
+- [Desktop-first by design](#desktop-first-by-design)
+- [Your data stays yours](#your-data-stays-yours)
+- [Getting started](#getting-started)
+- [Product surface](#product-surface)
+- [Security](#security)
+- [This repository](#this-repository)
+
+## The database workspace, rethought
+
+Working with SQLite is usually fragmented: one tool to inspect tables, another to run queries, a third to understand relationships, and a collection of scripts for everything operational.
+
+Sqlitos brings that work into one focused desktop experience. It is for developers, product builders and data-minded teams who need a fast path from **“What is in this database?”** to **“I understand it, I changed it safely, and I can explain what happened.”**
+
+| From | To |
 | --- | --- |
-| **Explorer** | Parcourir tables, colonnes, clés étrangères, index, vues et triggers. |
-| **Interroger** | Éditeur SQL avec historique, snippets, plan de requête et classification des requêtes. |
-| **Concevoir** | Créer et modifier des tables, comparer des schémas et préparer des migrations. |
-| **Opérer** | Contrôler la santé, les PRAGMA, le stockage, les sauvegardes, l’import et l’export. |
-| **Rechercher** | Exploiter FTS5, les embeddings et les outils de recherche avancée. |
-| **Collaborer** | Utiliser les fonctions optionnelles d’API, temps réel, planification et synchronisation cloud. |
-| **Sécuriser** | Gérer les audits, l’authentification, les rôles et les préférences de protection. |
+| Opening a file and guessing its shape | A navigable schema, relationships and operational context |
+| One-off SQL and scattered scripts | A deliberate workspace with history, snippets and query tools |
+| Risky schema changes | Inspectable diffs, migrations and database-aware guardrails |
+| Local data hidden behind opaque files | A product experience built around visibility and control |
 
-## Une architecture conçue pour le contrôle
+## Built for the work around data
+
+### `01` Understand
+
+Start with the structure. Explore tables, columns, foreign keys, indexes, views and triggers in a visual workspace designed to make unfamiliar databases legible.
+
+### `02` Ask
+
+Use a dedicated SQL editor with history, reusable snippets, result exploration and query-plan tooling. The goal is not merely to execute SQL — it is to understand its effect.
+
+### `03` Shape
+
+Design tables, compare schemas and prepare migrations from the same place where you inspect the current state. Schema work becomes a reviewable workflow rather than a leap of faith.
+
+### `04` Operate
+
+Move from development into confidence: integrity and health checks, PRAGMA inspection, backups, import/export, storage visibility and change-oriented diagnostics.
+
+## Product surface
+
+| Explore | Query | Build | Operate |
+| :--- | :--- | :--- | :--- |
+| Schema map | SQL editor | Table designer | Health monitor |
+| Database browser | Query history | Migrations | Backups |
+| Tables & relations | Query plans | Schema diff | Import / export |
+| Storage view | Snippets | Indexes & triggers | PRAGMA controls |
+
+<details>
+<summary><strong>More capabilities in the workspace</strong></summary>
+
+<br />
+
+- Full-text search with SQLite FTS5
+- Vector and embedding-oriented workflows
+- Auto API and optional realtime capabilities
+- Optional remote database connection
+- Scheduled operations and notification-oriented tooling
+- Authentication, role-aware controls and security-audit views
+
+</details>
+
+## Desktop-first by design
 
 ```mermaid
 flowchart LR
-  U[Votre base SQLite] <-- accès local direct --> D[Sqlitos Desktop]
-  D --> W[Explorateur de schéma]
-  D --> Q[Éditeur SQL]
-  D --> O[Outils d'exploitation]
-  D -. fonctions optionnelles .-> C[Services cloud]
-  D -. connexion distante optionnelle .-> R[Serveur SQLitos]
+  DB[(Your SQLite file)] <-- direct local access --> APP[Sqlitos Desktop]
+  APP --> EXP[Explore]
+  APP --> SQL[Query]
+  APP --> SCH[Design]
+  APP --> OPS[Operate]
+  APP -. opt-in .-> CLOUD[Cloud services]
+  APP -. optional .-> REMOTE[Remote server]
 ```
 
-- **Desktop-first** : l’application Electron travaille avec les fichiers SQLite locaux, sans serveur requis.
-- **Séparation des responsabilités** : les accès local, navigateur et distant sont distincts afin que chaque environnement conserve ses garanties propres.
-- **Extensions optionnelles** : les services cloud et le serveur distant complètent le produit sans devenir une dépendance pour l’usage local.
+The local desktop app is the centre of Sqlitos. A server is not required to open and work with a SQLite file. Optional cloud and remote-server capabilities are additive: they support workflows that need them without redefining the local experience.
 
-## Installation
+## Your data stays yours
 
-### Installer l’application
+Sqlitos is designed around a simple premise: **a local database should remain local unless you explicitly decide otherwise.**
 
-1. Ouvrez la page [Releases](../../releases).
-2. Téléchargez l’installateur correspondant à votre système.
-3. Installez Sqlitos puis ouvrez votre fichier SQLite depuis l’écran de connexion.
+- Open a SQLite file directly from your machine.
+- Keep local exploration and SQL work independent of a hosted database service.
+- Configure remote connections, backups or cloud features intentionally when your workflow calls for them.
+- Keep secrets out of issues and public repositories.
 
-> Les versions publiées et leurs notes de mise à jour seront disponibles dans les releases de ce dépôt.
+## Getting started
 
-### Prérequis système
+### Discover Sqlitos
 
-| Système | Distribution prévue |
+Visit [sqlitos.vercel.app](https://sqlitos.vercel.app) for the official product experience and current product information.
+
+### Install the desktop app
+
+When a version is available, download the installer for your platform from [Releases](../../releases):
+
+| Platform | Distribution |
 | --- | --- |
-| Windows | Installeur `.exe` |
-| macOS | Image disque `.dmg` |
+| Windows | `.exe` installer |
+| macOS | `.dmg` disk image |
 | Linux | AppImage |
 
-## Confidentialité par défaut
+Then open Sqlitos, choose a SQLite file and begin with the schema explorer.
 
-Votre base reste votre source de vérité. En usage desktop local, Sqlitos ouvre le fichier SQLite choisi directement sur votre machine. Aucune instance de serveur n’est nécessaire pour explorer un schéma ou exécuter des requêtes locales.
+## Security
 
-Les fonctions qui impliquent un service distant — par exemple une connexion HTTP, une sauvegarde externe ou des services cloud — sont distinctes et doivent être configurées explicitement.
+Sqlitos uses a layered approach appropriate to desktop database work:
 
-## Sécurité
+- isolated and sandboxed Electron renderer processes;
+- explicit IPC boundaries between the interface and local system operations;
+- runtime validation at application and server boundaries;
+- bearer-token protection and restrictive CORS defaults for the optional remote server.
 
-Sqlitos applique notamment les principes suivants :
+Please do not disclose vulnerabilities in public issues. Read [SECURITY.md](SECURITY.md) for responsible reporting.
 
-- isolation de contexte et sandbox dans l’application desktop ;
-- API IPC exposée de manière explicite entre l’interface et le système local ;
-- validation des données aux frontières applicatives ;
-- authentification par jeton pour le serveur distant facultatif ;
-- configuration CORS restrictive par défaut pour ce serveur.
+## This repository
 
-Ne publiez jamais de fichiers de base de données, de clés d’API ou de mots de passe dans une issue. Consultez [SECURITY.md](SECURITY.md) pour signaler une vulnérabilité de façon responsable.
+This is the official public home for the **Sqlitos product**: its positioning, public documentation, release notes and feedback.
 
-## Ce dépôt
+The application source code is intentionally not published here. This keeps product code, development infrastructure and sensitive implementation details separate from the public product experience.
 
-Ce dépôt est la **vitrine publique officielle** de Sqlitos. Il est volontairement limité à la documentation, aux annonces de versions et aux échanges avec la communauté ; il ne contient ni le code source de l’application, ni des secrets, ni des bases d’exemple distribuables.
+### Share feedback
 
-Pour une demande de fonctionnalité, un retour produit ou une question d’intégration, ouvrez une issue en précisant le contexte, la version de Sqlitos et les étapes de reproduction. Consultez [CONTRIBUTING.md](CONTRIBUTING.md) pour le cadre de contribution.
+Have a workflow Sqlitos should make easier? [Open an issue](../../issues) with the context, the desired outcome and — when reporting a defect — the version and steps to reproduce.
 
-## Feuille de route
-
-- [ ] Publier les premiers installateurs signés.
-- [ ] Ajouter captures d’écran et démonstrations produit aux releases.
-- [ ] Documenter les intégrations de sauvegarde et de serveur distant.
-- [ ] Ouvrir un espace de retours produit structuré.
-
-## Contact
-
-Pour les demandes commerciales, partenariats ou support privé, utilisez le canal de contact indiqué sur la page de profil de l’organisation GitHub qui publie ce dépôt.
+For documentation contributions and public feedback guidelines, see [CONTRIBUTING.md](CONTRIBUTING.md).
 
 ---
 
-<p align="center">
-  Conçu pour garder les données proches de celles et ceux qui les utilisent.<br />
-  <strong>Sqlitos</strong>
-</p>
+<div align="center">
+
+Built for people who want to move fast **without moving their data away**.
+
+<a href="https://sqlitos.vercel.app"><strong>Explore Sqlitos →</strong></a>
+
+</div>
 
