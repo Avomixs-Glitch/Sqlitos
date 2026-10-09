@@ -1,0 +1,9 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Site officiel Sqlitos
+    url: https://sqlitos.vercel.app
+    about: Découvrez Sqlitos et les informations produit publiques.
+  - name: Question de support ou de sécurité
+    url: https://github.com/Avomixs-Glitch/Sqlitos/blob/main/SUPPORT.md
+    about: Consultez le bon canal avant de créer une issue publique.
+
