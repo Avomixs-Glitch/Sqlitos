@@ -10,7 +10,7 @@
 [![Desktop first](https://img.shields.io/badge/Architecture-Desktop--first-2DD4BF?style=for-the-badge)](#desktop-first-by-design)
 [![Privacy](https://img.shields.io/badge/Data%20model-Local--first-7C3AED?style=for-the-badge)](#your-data-stays-yours)
 
-[Official website](https://sqlitos.vercel.app) · [Releases](../../releases) · [Security](SECURITY.md) · [Feedback](../../issues)
+[Official website](https://sqlitos.vercel.app) · [Product guide](docs/PRODUCT.md) · [Releases](../../releases) · [Security](SECURITY.md) · [Feedback](../../issues)
 
 </div>
 
@@ -22,10 +22,20 @@
 
 > **Sqlitos turns a database file into a workspace.** Inspect the structure, write SQL with confidence, evolve schemas deliberately and keep operations close to the data they affect.
 
+<table>
+  <tr>
+    <td width="33%"><strong>Local-first</strong><br />Open a SQLite file directly. A server is not the starting point.</td>
+    <td width="33%"><strong>One surface</strong><br />Move from schema to SQL, migration and backup without changing tools.</td>
+    <td width="33%"><strong>Deliberate operations</strong><br />See what changes before you apply it, and keep a useful record of the work.</td>
+  </tr>
+</table>
+
 ## Table of contents
 
 - [The database workspace, rethought](#the-database-workspace-rethought)
+- [The Sqlitos workflow](#the-sqlitos-workflow)
 - [Built for the work around data](#built-for-the-work-around-data)
+- [Workspaces with depth](#workspaces-with-depth)
 - [Desktop-first by design](#desktop-first-by-design)
 - [Your data stays yours](#your-data-stays-yours)
 - [Getting started](#getting-started)
@@ -46,23 +56,49 @@ Sqlitos brings that work into one focused desktop experience. It is for develope
 | Risky schema changes | Inspectable diffs, migrations and database-aware guardrails |
 | Local data hidden behind opaque files | A product experience built around visibility and control |
 
+## The Sqlitos workflow
+
+<table>
+  <tr>
+    <td valign="top" width="25%"><strong>01 — Open</strong><br /><br />Choose a SQLite file, reconnect to a workspace, or use an optional remote connection when the job needs one.</td>
+    <td valign="top" width="25%"><strong>02 — Read</strong><br /><br />Map tables, relations, indexes, triggers and storage before touching a statement.</td>
+    <td valign="top" width="25%"><strong>03 — Decide</strong><br /><br />Use SQL, query plans, diffs and generated migration drafts to make a change with context.</td>
+    <td valign="top" width="25%"><strong>04 — Operate</strong><br /><br />Validate integrity, record the change, create a backup, or schedule the next routine operation.</td>
+  </tr>
+</table>
+
+This is the product’s central idea: a database tool should preserve the chain of reasoning around a change, not merely provide a text box that can run it.
+
 ## Built for the work around data
 
 ### `01` Understand
 
-Start with the structure. Explore tables, columns, foreign keys, indexes, views and triggers in a visual workspace designed to make unfamiliar databases legible.
+Start with the structure. Explore tables, columns, foreign keys, indexes, views and triggers in a visual workspace designed to make unfamiliar databases legible. The schema canvas is the orientation layer; it gives every later query and schema decision a place.
 
 ### `02` Ask
 
-Use a dedicated SQL editor with history, reusable snippets, result exploration and query-plan tooling. The goal is not merely to execute SQL — it is to understand its effect.
+Use a dedicated SQL editor with history, reusable snippets, result exploration and query-plan tooling. The goal is not merely to execute SQL — it is to understand its effect, reuse the intent and notice when a query is doing more work than expected.
 
 ### `03` Shape
 
-Design tables, compare schemas and prepare migrations from the same place where you inspect the current state. Schema work becomes a reviewable workflow rather than a leap of faith.
+Design tables, compare schemas and prepare migrations from the same place where you inspect the current state. Generated migration drafts call out changes that SQLite cannot safely automate, while migrations run transactionally and can include an explicit rollback path.
 
 ### `04` Operate
 
-Move from development into confidence: integrity and health checks, PRAGMA inspection, backups, import/export, storage visibility and change-oriented diagnostics.
+Move from development into confidence: integrity and foreign-key checks, WAL-aware health probes, PRAGMA inspection, backups, import/export, storage visibility and change-oriented diagnostics.
+
+## Workspaces with depth
+
+| Workspace | What it helps you do | Signals worth noticing |
+| --- | --- | --- |
+| **Schema & database browser** | Navigate tables, relations, views, triggers and row-level data. | Foreign-key relationships, generated SQL and object definitions. |
+| **SQL & query plan** | Write, format, run and revisit SQL. Inspect how SQLite will execute it. | Query history, reusable snippets, result exploration and planner output. |
+| **Designer & diff** | Model a table or compare two real SQLite files before changing production data. | Live SQL preview, constraints, unsafe-change warnings and exported migrations. |
+| **Migrations** | Author, apply and roll back versioned database changes. | Applied history, transactional execution and optional down SQL. |
+| **Health & operations** | Check integrity, inspect PRAGMAs, create backups and move data in or out. | Integrity probes, WAL state, backup records and audit-oriented activity. |
+| **Search & vectors** | Work with FTS5 virtual tables and embedding-oriented local collections. | Full-text indexes, local vectorization and similarity search. |
+
+For the complete capability map — including connection-mode requirements and operation boundaries — read the [Sqlitos product guide](docs/PRODUCT.md).
 
 ## Product surface
 
