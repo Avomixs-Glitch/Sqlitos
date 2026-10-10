@@ -14,6 +14,10 @@
 
 </div>
 
+<a href="https://sqlitos.vercel.app">
+  <img src="./assets/sqlitos-workspace-hero.png" alt="Sqlitos: an abstract, local-first database workspace" />
+</a>
+
 <br />
 
 > **Sqlitos turns a database file into a workspace.** Inspect the structure, write SQL with confidence, evolve schemas deliberately and keep operations close to the data they affect.
